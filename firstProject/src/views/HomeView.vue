@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import swal from 'sweetalert';
 import {ref} from "vue";
+import {useFlash} from '@/composables/useFlash.ts'
 
 let message = ref('')
-let flash =(message:string)=>{
-  return swal ('Success !',message,'success');
-}
+const { flash } = useFlash();
+
 </script>
 
 <template>
