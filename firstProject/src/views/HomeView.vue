@@ -1,9 +1,17 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import {ref} from "vue";
+import {useFlash} from '@/composables/useFlash.ts'
+
+let message = ref('')
+const { flash } = useFlash();
+
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <input v-model="message">
+    <p>
+      <button @click="flash(message)"> Click Me</button>
+    </p>
   </main>
 </template>
