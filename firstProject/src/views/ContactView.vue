@@ -1,15 +1,17 @@
+<script setup lang="ts">
+import {ref} from "vue";
+import {useFlash} from '@/composables/useFlash.ts'
+
+let message = ref('')
+const {flash} = useFlash();
+
+</script>
+
 <template>
-  <div class="contact">
-    <h1>This is a contact page</h1>
-  </div>
+  <h1>This is a contact page</h1>
+  <input v-model="message">
+  <p>
+    <button @click="flash(message)"> Click Me</button>
+  </p>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .contact {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

@@ -1,17 +1,27 @@
 <script setup lang="ts">
-import {ref} from "vue";
-import {useFlash} from '@/composables/useFlash.ts'
+import {useLocalStorage} from "@/composables/useLocalStorage.ts";
 
-let message = ref('')
-const { flash } = useFlash();
+let food = useLocalStorage('food', 'auto')
+
+// let food = ref(localStorage.getItem('food'));
+//
+// watch(food, (val) => {
+//   if (val) {
+//     write('food', val)
+//   }
+// })
+//
+// function write(key: string, value: string) {
+//   localStorage.setItem(key, value)
+// }
 
 </script>
 
 <template>
   <main>
-    <input v-model="message">
+
     <p>
-      <button @click="flash(message)"> Click Me</button>
+      what is your favourite food : <input v-model="food">
     </p>
   </main>
 </template>
