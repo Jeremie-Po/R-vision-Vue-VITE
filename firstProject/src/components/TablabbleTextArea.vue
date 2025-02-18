@@ -1,11 +1,18 @@
 <template>
-      <textarea @keydown.tab.prevent=onTabPress
-                style="width:100%; height:300px "
-      >hi there
-      </textarea>
+  <textarea @keydown.tab.prevent=onTabPress
+            @keyup="emit('update:modelValue',$event.target?.value)"
+            v-text="modelValue"
+  ></textarea>
 </template>
 
 <script setup lang="ts">
+
+defineProps({
+  modelValue: String,
+});
+
+let emit = defineEmits(['update:modelValue']);
+
 function onTabPress(e) {
   let textArea = e.target;
 
