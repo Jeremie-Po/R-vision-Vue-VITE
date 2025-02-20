@@ -22,8 +22,9 @@ import TablabbleTextArea from "@/components/TablabbleTextArea.vue";
 import {provide, ref} from "vue";
 import Footer from "@/components/footer.vue";
 import {state} from "@/stores/quizzStore.ts";
-import {counter} from "@/stores/counterStore.ts"
+import {useCounterStore} from "@/stores/counterStore.ts"
 
+let counter = useCounterStore();
 let food = useLocalStorage('food', 'auto');
 let comment = ref('hi there !!');
 let tab = {
