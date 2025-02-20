@@ -3,6 +3,7 @@
   <div>{{ key }}</div>
   <div> {{ tab.q1 }} {{ tab.q2 }}</div>
   <input v-model="comment"/>
+  {{ comment.comment }}
 </template>
 
 <script setup>
